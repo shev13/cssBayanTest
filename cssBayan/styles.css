@@ -1,14 +1,40 @@
 body {
-  background-color: #ccc;
+  /* background-color: #ccc; */
+  margin: 0 auto;
+  max-width: 1080px;
 }
 
 h1 {
   text-align: center;
 }
 
+label {
+  display: block;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 2;
+  margin: 10px;
+  /* padding: 10px; */
+  border-top: 1px solid #ccc;
+}
+
 .slider {
-  width: 50%;
+  /* width: 50%; */
   display: block;
   margin: 0 auto;
-  background-color: #a391c5;
+  /* background-color: #a391c5; */
+}
+
+.slider input {
+  display: none;
+}
+
+img {
+  display: none;
+  margin: 0 auto;
+}
+
+.slider input:checked~img {
+  display: block;
 }
