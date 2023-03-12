@@ -1,40 +1,142 @@
+:root {
+  --color-hover: #3f68d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  /* background-color: #ccc; */
-  margin: 0 auto;
-  max-width: 1080px;
+  margin: 2vw auto;
+  max-width: 580px;
+  background-color: #f3f3f3;
 }
 
-h1 {
+/* h1 {
   text-align: center;
+} */
+
+.text-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+  margin-top: 1vw;
+  border-top: 0.2vh solid #ccc;
 }
 
-label {
-  display: block;
-  text-align: center;
-  font-size: 28px;
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Text */
+p {
+  padding: 1vw;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 2;
-  margin: 10px;
-  /* padding: 10px; */
-  border-top: 1px solid #ccc;
+  line-height: 1.5;
+  transition: all 0.3s;
 }
+
+input:checked~label p,
+.slider:hover p {
+  color: black;
+}
+
+p,
+.slide:active p {
+  color: var(--color-hover);
+}
+
+/* Text <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Icon */
+.icon {
+  display: none;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.slider:hover .icon {
+  display: flex;
+}
+
+input:checked~label .icon,
+.slide:hover .icon {
+  transform: rotate(45deg);
+}
+
+.icon * {
+  background-color: black;
+  transition: all 0.3s;
+}
+
+.slide:active .icon * {
+  background-color: var(--color-hover);
+}
+
+.first-line {
+  height: 0.4vh;
+  width: 1vh;
+  border-top-left-radius: 0.4vh;
+  border-bottom-left-radius: 0.4vh;
+}
+
+.second-line {
+  height: 2.4vh;
+  width: 0.4vh;
+  border-radius: 0.4vh;
+}
+
+.third-line {
+  height: 0.4vh;
+  width: 1vh;
+  border-top-right-radius: 0.4vh;
+  border-bottom-right-radius: 0.4vh;
+}
+
+/* Icon <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
 
 .slider {
   /* width: 50%; */
   display: block;
   margin: 0 auto;
   /* background-color: #a391c5; */
+  /* background-color: #f3f3f3; */
+  transition-delay: all 3s;
+}
+
+.slide * {
+  cursor: pointer;
+  /* background-color: #99a4c4; */
 }
 
 .slider input {
   display: none;
+  /* transition-delay: all 3s; */
 }
 
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Image */
 img {
-  display: none;
   margin: 0 auto;
+  display: none;
+  width: 0;
 }
 
-.slider input:checked~img {
-  display: block;
+.slide:active img {
+  opacity: 0.5;
 }
+
+.slider .slide:hover img,
+.slider input:checked~label img {
+  display: block;
+  width: 90%;
+  transition: all 0.3s;
+}
+
+/* Image <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
